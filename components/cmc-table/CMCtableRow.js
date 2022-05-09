@@ -118,6 +118,9 @@ const CMCtableRow = ({
                 <Image src={getRandomGraph()} alt='graph' width={150} height={60}/>
             </td>
             <td>
+                {}
+            </td>
+            <td>
                 <More/>
             </td>
         </tr>

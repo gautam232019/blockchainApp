@@ -28,7 +28,7 @@ const CMCTable = () => {
     },[getTopTenCoins])
     console.log(coinData);
   return (
-    <div className='text-white font-bold'>
+    <div className='font-bold text-white'>
         <table className='w-full'>
             <CMCTableHeader/>
             {coinData && coinData ? (
@@ -41,7 +41,7 @@ const CMCTable = () => {
                     coinSymbol={coin.symbol}
                     coinIcon={btc}
                     showBuy={true}
-                    hRate={coin.quote.USD.percent_change_24H}
+                    hRate={coin.quote.USD.percent_change_24h}
                     dRate={coin.quote.USD.percent_change_7d}
                     hRateIsIncrement={true}
                     price={coin.quote.USD.price}

@@ -8,7 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return(
     <MoralisProvider 
     serverUrl={process.env.NEXT_PUBLIC_SERVER} 
-    appId={process.env.NEXT_PUBLIC_APP_ID}>
+    appId={process.env.NEXT_PUBLIC_APP_ID}
+    initializeOnMount={false}>
     <CoinMarketProvider>
       <Component {...pageProps} />
     </CoinMarketProvider>

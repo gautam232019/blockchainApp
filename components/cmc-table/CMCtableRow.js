@@ -4,7 +4,7 @@ import More from '../../assets/svg/more'
 import Star from '../../assets/svg/star'
 import Rate from './Rate'
 import {useRouter} from 'next/router'
-import CoinNameRow from '../cmc-table/CoinNameRow'
+import CoinNameRow from '../CoinNameRow'
 
 const styles = {
     tableRow:`text-white border-b border-gray-800 text-[0.93rem] ml-10`,
@@ -57,7 +57,7 @@ const CMCtableRow = ({
 
     const viewPrice = () => {
         router.push(
-            `/currencies/price/?symbol=${symbol}&coin=${coinName}&price=${price}`
+            `/currencies/price/?symbol=${coinSymbol}&coin=${coinName}&price=${price}`
         )
     }
 
@@ -72,11 +72,10 @@ const CMCtableRow = ({
             </td>
             <td>{starNum}</td>
             {coinIcon && coinIcon ? (
-                <td className='cursor-pointer'>
+                <td className='cursor-pointer' onClick={viewCoinDetails}>
                     <CoinNameRow
                     name={coinName}
                     icon={coinIcon}
-                    clicked={viewCoinDetails}
                     />
                 </td>
             ):(
@@ -118,7 +117,7 @@ const CMCtableRow = ({
                 <Image src={getRandomGraph()} alt='graph' width={150} height={60}/>
             </td>
             <td>
-                {}
+                {marketCapValue}
             </td>
             <td>
                 <More/>
